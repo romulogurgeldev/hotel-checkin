@@ -1,0 +1,43 @@
+<h2>Hóspedes Presentes</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Documento</th>
+      <th>Data de Entrada</th>
+      <th>Data de Saída</th>
+      <th>Valor Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let guest of guestsPresent">
+      <td>{{ guest.person.name }}</td>
+      <td>{{ guest.person.document }}</td>
+      <td>{{ guest.entryDate | date:'dd/MM/yyyy HH:mm' }}</td>
+      <td>{{ guest.exitDate | date:'dd/MM/yyyy HH:mm' }}</td>
+      <td>{{ guest.totalAmount | currency:'BRL' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Hóspedes que Já Saíram</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Documento</th>
+      <th>Data de Entrada</th>
+      <th>Data de Saída</th>
+      <th>Valor Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let guest of guestsLeft">
+      <td>{{ guest.person.name }}</td>
+      <td>{{ guest.person.document }}</td>
+      <td>{{ guest.entryDate | date:'dd/MM/yyyy HH:mm' }}</td>
+      <td>{{ guest.exitDate | date:'dd/MM/yyyy HH:mm' }}</td>
+      <td>{{ guest.totalAmount | currency:'BRL' }}</td>
+    </tr>
+  </tbody>
+</table>

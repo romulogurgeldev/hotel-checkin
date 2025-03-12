@@ -1,0 +1,32 @@
+<h2>Check-in</h2>
+<form (ngSubmit)="onSubmit(checkInForm)" #checkInForm="ngForm">
+  <label for="person">Pessoa:</label>
+  <select id="person" [(ngModel)]="checkIn.person" name="person" required>
+    <option *ngFor="let person of persons" [ngValue]="person">
+      {{ person.name }} ({{ person.document }})
+    </option>
+  </select>
+  <div *ngIf="checkInForm.controls['person']?.invalid && checkInForm.controls['person']?.touched">
+    Selecione uma pessoa.
+  </div>
+
+  <label for="entryDate">Data e Hora de Entrada:</label>
+  <input type="datetime-local" id="entryDate" [(ngModel)]="checkIn.entryDate" name="entryDate" required>
+  <div *ngIf="checkInForm.controls['entryDate']?.invalid && checkInForm.controls['entryDate']?.touched">
+    A data e hora de entrada são obrigatórias.
+  </div>
+
+  <label for="exitDate">Data e Hora de Saída:</label>
+  <input type="datetime-local" id="exitDate" [(ngModel)]="checkIn.exitDate" name="exitDate" required>
+  <div *ngIf="checkInForm.controls['exitDate']?.invalid && checkInForm.controls['exitDate']?.touched">
+    A data e hora de saída são obrigatórias.
+  </div>
+
+  <label class="checkbox-label">
+    Vaga na Garagem
+    <input type="checkbox" id="vehicleAdded" [(ngModel)]="checkIn.vehicleAdded" name="vehicleAdded">
+  </label>
+  
+
+  <button type="submit" [disabled]="checkInForm.invalid">Realizar Check-in</button>
+</form>

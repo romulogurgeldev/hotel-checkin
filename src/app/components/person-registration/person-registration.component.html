@@ -1,0 +1,22 @@
+<h2>Cadastro de Pessoa</h2>
+<form (ngSubmit)="onSubmit(personForm)" #personForm="ngForm">
+  <label for="name">Nome:</label>
+  <input type="text" id="name" [(ngModel)]="person.name" name="name" required minlength="3">
+  <div *ngIf="personForm.controls['name']?.invalid && personForm.controls['name']?.touched">
+    O nome é obrigatório e deve ter pelo menos 3 caracteres.
+  </div>
+
+  <label for="document">Documento:</label>
+  <input type="text" id="document" [(ngModel)]="person.document" name="document" required>
+  <div *ngIf="personForm.controls['document']?.invalid && personForm.controls['document']?.touched">
+    O documento é obrigatório.
+  </div>
+
+  <label for="phone">Telefone:</label>
+  <input type="text" id="phone" [(ngModel)]="person.phone" name="phone" required>
+  <div *ngIf="personForm.controls['phone']?.invalid && personForm.controls['phone']?.touched">
+    O telefone é obrigatório.
+  </div>
+
+  <button type="submit" [disabled]="personForm.invalid">Cadastrar</button>
+</form>

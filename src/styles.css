@@ -1,1 +1,190 @@
-/* You can add global styles to this file, and also import other style files */
+/* Paleta de azul e branco */
+:root {
+  --blue-light: #87CEEB;  /* Azul Claro */
+  --blue-dark: #1E3A8A;   /* Azul Escuro */
+  --white: #FFFFFF;       /* Branco */
+  --gray-light: #F3F4F6;  /* Cinza Claro */
+  --gray-dark: #CCCCCC;   /* Cinza Escuro */
+  --blue-medium: #4A90E2; /* Azul Médio */
+}
+
+/* Estilo básico */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  color: var(--blue-dark);
+  box-sizing: border-box;
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--blue-dark);
+  color: var(--white);
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Barra de navegação */
+nav a {
+  color: var(--white);
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Formulários */
+form {
+  max-width: 450px; /* Reduzir a largura máxima */
+  margin: 1.5rem auto;
+  padding: 1.2rem; /* Diminui o padding */
+  border: 1px solid var(--gray-dark);
+  border-radius: 8px;
+  background-color: var(--white);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem; /* Reduzir o espaçamento entre o label e o input */
+  font-weight: bold;
+}
+
+/* Estilo da checkbox */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+input, select, button {
+  width: 100%;
+  padding: 0.6rem; /* Diminuir o padding dos campos */
+  margin-bottom: 0.8rem; /* Diminuir o espaçamento entre os campos */
+  border-radius: 5px;
+  border: 1px solid var(--gray-dark);
+  font-size: 0.95rem; /* Ajustar o tamanho da fonte */
+  box-sizing: border-box;
+}
+
+/* Ajustes de fundo dos inputs e selects */
+input, select {
+  background-color: var(--gray-light);
+}
+
+/* Estilo do botão */
+button {
+  background-color: var(--blue-medium);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: var(--blue-dark);
+}
+
+button:disabled {
+  background-color: var(--gray-dark);
+  cursor: not-allowed;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  table-layout: fixed;
+}
+
+th, td {
+  padding: 0.8rem; /* Menor padding para caber melhor */
+  border: 1px solid var(--gray-dark);
+  text-align: left;
+  font-size: 0.95rem; /* Ajustar o tamanho da fonte */
+}
+
+th {
+  background-color: var(--blue-dark);
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+td {
+  word-wrap: break-word;
+}
+
+/* Alternando as linhas para maior clareza */
+tbody tr:nth-child(odd) {
+  background-color: var(--gray-light);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--white);
+}
+
+tbody tr:hover {
+  background-color: var(--blue-light);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body {
+      padding: 0 10px;
+  }
+  
+  form {
+      width: 90%;
+  }
+  
+  input, select, button {
+      font-size: 14px;
+      padding: 0.6rem; /* Ajustar padding */
+  }
+  
+  table {
+      font-size: 14px;
+  }
+  
+  th, td {
+      padding: 0.75rem;
+  }
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 480px) {
+  header {
+      padding: 0.8rem;
+      font-size: 1rem;
+  }
+  
+  nav a {
+      margin: 0 0.5rem;
+  }
+  
+  form {
+      padding: 1rem;
+      width: 95%;
+  }
+  
+  input, select, button {
+      padding: 0.5rem;
+      font-size: 12px;
+  }
+  
+  table {
+      font-size: 12px;
+  }
+  
+  th, td {
+      padding: 0.5rem;
+  }
+}
